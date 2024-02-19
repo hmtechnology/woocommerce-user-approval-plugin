@@ -7,7 +7,7 @@ Author: hmtechnology
 Author URI: https://github.com/hmtechnology
 License: GNU General Public License v3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
-Plugin URI: https://github.com/hmtechnology/woocommerce-user-approval
+Plugin URI: https://github.com/hmtechnology/woocommerce-user-approval-plugin
 */
 
 // Function to redirect unauthenticated users to the login page
