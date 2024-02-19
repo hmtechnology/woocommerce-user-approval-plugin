@@ -13,7 +13,7 @@ The WooCommerce User Approval plugin enhances WooCommerce by providing administr
 - **Manual User Approval**: Allows administrators to manually approve user registrations.
 - **Email Notifications**: Sends personalized email notifications to users upon account approval and to administrators upon new user registrations.
 - **User Approval Status**: Adds a custom field to user profiles indicating approval status.
-- **Redirect Unauthenticated Users**: Redirects all unauthenticated users to the login page, effectively closing the store to non-logged-in users.
+- **Redirect Unauthenticated Users**: Redirects all unauthenticated users to the login page (you have to rename as /login as slug your my-account page), effectively closing the store to non-logged-in users.
 - **Prevent Automatic Login**: Prevents automatic login for newly registered users to ensure manual approval.
 - **Disable Login for Unapproved Users**: Disables login for unapproved users with the "customer" role to maintain security.
 - **Error Message for Unapproved Users**: Displays an error message on the "My Account" page for users who have not yet been approved by the administrator.
