@@ -28,6 +28,9 @@ The WooCommerce User Approval plugin enhances WooCommerce by providing administr
 2. Select if you want to approve per-user basis.
 3. Save your changes to apply the settings.
 
+## Screenshot
+![Screen](https://github.com/hmtechnology/woocommerce-user-approval-plugin/blob/main/screenshot/screenshot.jpg)
+
 ## Contributing
 Contributions are welcome! If you have any improvements or new features to suggest, please open an issue or submit a pull request. We appreciate your feedback.
 
