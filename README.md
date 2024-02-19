@@ -25,7 +25,7 @@ The WooCommerce User Approval plugin enhances WooCommerce by providing administr
 
 ## Configuration
 1. After activation, navigate to the plugin settings in the WordPress admin panel.
-2. Configure the desired settings for user approval and email notifications.
+2. Select if you want to approve per-user basis.
 3. Save your changes to apply the settings.
 
 ## Contributing
