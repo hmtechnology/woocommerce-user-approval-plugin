@@ -116,7 +116,9 @@ add_action('woocommerce_created_customer', 'custom_registration_email_notificati
 
 // Send a personalized email to the user when the user's approval is checked from the back office
 function send_approval_notification_email($user_id) {
-    if (isset($_POST['user_approval']) && $_POST['user_approval'] == 1) {
+    $previous_approval = get_user_meta($user_id, 'previous_user_approval', true);
+    
+    if (isset($_POST['user_approval']) && $_POST['user_approval'] == 1 && (!isset($previous_approval) || $_POST['user_approval'] != $previous_approval)) {
         $user = get_user_by('id', $user_id);
         $to = $user->user_email;
         $subject = __('Your account has been approved', 'woocommerce');
@@ -131,6 +133,10 @@ function send_approval_notification_email($user_id) {
 
         $email = new WC_Emails();
         $email->send($to, $subject, $email->wrap_message($email_heading, $message), '', '');
+
+        update_user_meta($user_id, 'previous_user_approval', 1);
+    } elseif ((!isset($_POST['user_approval']) || (isset($_POST['user_approval']) && $_POST['user_approval'] != 1)) ) {
+        update_user_meta($user_id, 'previous_user_approval', 0);
     }
 }
 add_action('profile_update', 'send_approval_notification_email');
