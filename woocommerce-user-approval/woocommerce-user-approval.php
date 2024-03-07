@@ -11,14 +11,14 @@ Plugin URI: https://github.com/hmtechnology/woocommerce-user-approval-plugin
 */
 
 // Function to redirect unauthenticated users to the login page
-function redirect_users_to_login_page() {
-    if (!is_user_logged_in() && !is_page('login')) {
-        $login_url = home_url('/login/');
-        wp_redirect($login_url);
+function redirect_users_to_my_account_page() {
+    if (!is_user_logged_in() && !is_account_page()) {
+        $my_account_url = get_permalink(get_option('woocommerce_myaccount_page_id'));
+        wp_redirect($my_account_url);
         exit;
     }
 }
-add_action('template_redirect', 'redirect_users_to_login_page');
+add_action('template_redirect', 'redirect_users_to_my_account_page');
 
 // Prevent automatic login for newly registered users
 add_filter('woocommerce_registration_auth_new_customer', '__return_false');
