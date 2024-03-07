@@ -19,8 +19,9 @@ The WooCommerce User Approval plugin enhances WooCommerce by providing administr
 
 ## Configuration
 1. After activation, navigate to the plugin settings in the WordPress admin panel.
-2. Select if you want to approve per-user basis.
-3. Save your changes to apply the settings.
+2. Remember to disable the official email that WooCommerce sends for the new account. You can do this from WooCommerce > Settings > Email: New Account and disable
+3. Select if you want to approve per-user basis.
+4. Save your changes to apply the settings.
 
 ## Screenshot
 ![Screen](https://github.com/hmtechnology/woocommerce-user-approval-plugin/blob/main/screenshot/screenshot.jpg)
