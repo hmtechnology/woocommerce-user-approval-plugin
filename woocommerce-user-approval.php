@@ -60,17 +60,17 @@ add_filter('manage_users_custom_column', 'display_user_approval_column_content',
 
 // Disable login for unapproved users for "customer" role
 function custom_remove_access_for_pending_customers() {
-    if (is_user_logged_in()) {
+    if ( is_user_logged_in() ) {
         $current_user = wp_get_current_user();
-        if (in_array('customer', (array)$current_user->roles) && !get_user_meta($current_user->ID, 'user_approval', true)) {
+        if ( in_array( 'customer', (array) $current_user->roles ) && ! get_user_meta( $current_user->ID, 'user_approval', true ) ) {
             wp_logout();
-            $login_url = home_url('/login/');
-            wp_redirect($login_url . '?login_error=not_approved');
+            $my_account_url = get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); // Get WooCommerce My Account page URL
+            wp_redirect( $my_account_url . '?login_error=not_approved' );
             exit;
         }
     }
 }
-add_action('template_redirect', 'custom_remove_access_for_pending_customers');
+add_action( 'template_redirect', 'custom_remove_access_for_pending_customers' );
 
 // Function to display the error message on the "My Account" page if the user is not yet approved
 function display_login_error_message_on_my_account_page() {
